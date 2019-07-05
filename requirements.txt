@@ -1,0 +1,6 @@
+numpy
+flask
+googletrans
+flask_bootstrap
+keras==2.2.4
+gunicorn

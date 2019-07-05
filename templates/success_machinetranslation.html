@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script async="" src="../static/js/js.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="../../static/js/babel-polyfill.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="../static/js/jquery-3.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/vue-resource.js"></script>
+    <style></style>
+</head>
+
+<body data-gr-c-s-loaded="true" lang="en">
+    <div class="modal" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="margin:2em" align="center">
+               <h2><STRONG style = "color : #007bff">Natural Language Processing - Amir &#128525;</STRONG></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="AppContainer">
+                <div id="app" style="visibility: visible;">
+                    <div class="NavMenu">
+                        <ul id="tabs" class="nav nav-pills nav-fill">
+                         
+                          
+                            <li class="nav-item NavButton"><a href="#Machine Translation" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Machine Translation
+</a></li>
+                        </ul>
+                        <div></div>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" id="Machine Translation" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">  In Machine Translation
+                                                Sequence-to-Sequence (seq2seq) model are used. my aim is to translate given sentences from English to French.
+Here, both the input and output are sentences. In other words, these sentences are a sequence of words going in and out of a model. This is the basic idea of Sequence-to-Sequence modeling. 
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>English to French Translation Prediction &#128525;</h3>
+                                        <div>
+                                                <div class="form-group">
+                                                </div> <a href="{{ url_for('index')}}" type="button" class="btn btn-primary" > Back to Home Page</a>
+                                        </div>
+<br>
+<br>
+<table class="table table-striped table-light" >
+
+<tbody>
+     <tr>
+     <th scope="col">English Text</th>
+      <td><strong>{{received_text}}</strong></td>
+    </tr>
+    <tr>
+     <th scope="col">Deep Learning Model Prediction French Text</th>
+      <td><strong>{{result}}</strong></td>
+    </tr>
+<tr>
+     <th scope="col">Actual French Text</th>
+      <td><strong>{{actualv}}</strong></td>
+    </tr>
+</tbody>
+</table>
+
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-ODQA" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container footer">
+        <div class="contactUs">
+            <p>You can share your feedback at &#128525;
+                <a href="mailto:khan.amir504@gmail.com">khan.amir504@gmail.com</a></p>
+        </div>
+        <a href="https://github.com/Amir22010">
+            <img src="#" alt="powered by amir.ai">
+            © amir.ai on GitHub &#128525;
+        </a>
+    </footer>
+    <script src="../../static/js/vue_002.js"></script>
+</body>
+
+</html>

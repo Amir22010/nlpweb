@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script async="" src="../static/js/js.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="../../static/js/babel-polyfill.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="../static/js/jquery-3.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <script src="../static/js/vue.js"></script>
+    <script src="../static/js/vue-resource.js"></script>
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    var availableTags = [
+      "new jersey is sometimes quiet during autumn , and it is snowy in april.",
+      "the united states is usually chilly during july , and it is usually freezing in november.",
+      "california is usually quiet during march , and it is usually hot in june .",
+      "the united states is sometimes mild during june , and it is cold in september .",
+      "your least liked fruit is the grape , but my least liked is the apple .",
+      "his favorite fruit is the orange , but my favorite is the grape ."
+    ];
+    $( "#tags" ).autocomplete({
+//      source: availableTags, // uncomment this and comment the following to have normal autocomplete behavior
+      source: function (request, response) {
+          response( availableTags);
+      },
+      minLength: 0
+    }).focus(function(){
+//        $(this).data("uiAutocomplete").search($(this).val()); // uncomment this and comment the following to have autocomplete behavior when opening
+        $(this).data("uiAutocomplete").search('');
+    });
+  } );
+  </script>
+</head>
+<body data-gr-c-s-loaded="true" lang="en">
+    <div class="modal" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="margin:2em" align="center">
+               <h2><STRONG style = "color : #007bff">Natural Language Processing - Amir &#128525; </STRONG></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="AppContainer">
+                <div id="app" style="visibility: visible;">
+                    <div class="NavMenu">
+                        <ul id="tabs" class="nav nav-pills nav-fill">
+                            <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">QA</a></li>
+                            <li class="nav-item NavButton"><a href="#Machine Translation" role="tab" data-toggle="tab" class="nav-link active show" aria-selected="true">Machine Translation
+</a></li>
+                            <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Sentiment Analysis
+</a></li>
+                            <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Named Entity Recognition
+</a></li>
+                            <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Spam Classifier
+</a></li>
+                            <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Text Generation
+</a></li>
+
+               <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Text Similarity
+
+</a></li>
+        <li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Text Summarization
+</a></li>
+<li class="nav-item NavButton"><a href="#" role="tab" data-toggle="tab" class="nav-link" aria-selected="false">Topic Modelling
+</a></li>
+                            <!---->
+                            <!---->
+                        </ul>
+                        <div></div>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" id="QA" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">
+                                                Question Answering - In Development </p>
+                                    
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control">Q Text</textarea></div>
+                                                <h3>Question</h3>
+                                                <div class="form-group"></div> <button type="submit" class="btn btn-primary">Ask</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Text QA" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="Machine Translation" class="tab-pane fade active show">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">
+                                                In Machine Translation
+                                                Sequence-to-Sequence (seq2seq) model are used. my aim is to translate given sentences from English to French.
+Here, both the input and output are sentences. In other words, these sentences are a sequence of words going in and out of a model. This is the basic idea of Sequence-to-Sequence modeling. 
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>English Text</h3>
+                                        <div>
+                                            <form method="POST" action="{{ url_for('analyse')}}" id="myForm">
+                                                <div class="form-group"><textarea id="tags" rows="7" required="required" class="form-control" name="rawtext"></textarea></div>
+                                                <div class="form-group">
+                                                </div> <button type="submit" class="btn btn-primary">Translate to French</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                  <div class="col-sm-4">
+    <h3>Examples</h3>
+    <div class="list-group"><p>the united states is usually chilly during july , and it is usually freezing in november.</p><p>california is usually quiet during march , and it is usually hot in june .</p><p>the united states is sometimes mild during june , and it is cold in september.</p><p>your least liked fruit is the grape , but my least liked is the apple .</p><p>his favorite fruit is the orange , but my favorite is the grape.</p>
+        <p>he saw a old yellow truck</p></div>
+</div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-ODQA" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="Ranking" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">In Development</p>
+                                            
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Ask</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                        
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Ranking" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="Entity recognition" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">Named
+                                                Entity Recognition (NER) "In Development" <br><br>Hover over an entity to see its class description<br>Classes: <span class="badge badge-primary" data-toggle="tooltip" title="People, including fictional." style="cursor: help;">PERSON</span>, <span class="badge badge-danger" data-toggle="tooltip" title="Nationalities or religious or political groups." style="cursor: help;">NORP</span>, <span class="badge badge-info" data-toggle="tooltip" title="Companies, agencies, institutions, etc." style="cursor: help;">ORG</span>, <span class="badge badge-success" data-toggle="tooltip" title="Non-GPE locations, mountain ranges, bodies of water." style="cursor: help;">LOC</span>, <span class="badge badge-warning" data-toggle="tooltip" title="Countries, cities, states." style="cursor: help;">GPE</span>, <span class="badge badge-dark" data-toggle="tooltip" title="Absolute or relative dates or periods." style="cursor: help;">DATE</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Monetary values, including unit." style="cursor: help;">MONEY</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Buildings, airports, highways, bridges, etc." style="cursor: help;">FAC</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Objects, vehicles, foods, etc. (Not services.)" style="cursor: help;">PRODUCT</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Named hurricanes, battles, wars, sports events, etc." style="cursor: help;">EVENT</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Titles of books, songs, etc." style="cursor: help;">WORK_OF_ART</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Named documents made into laws." style="cursor: help;">LAW</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Any named language." style="cursor: help;">LANGUAGE</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Times smaller than a day." style="cursor: help;">TIME</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Percentage, including &quot;%&quot;." style="cursor: help;">PERCENT</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Measurements, as of weight or distance." style="cursor: help;">QUANTITY</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="&quot;first&quot;, &quot;second&quot;, etc." style="cursor: help;">ORDINAL</span>, <span class="badge badge-secondary" data-toggle="tooltip" title="Numerals that do not fall under another type." style="cursor: help;">CARDINAL</span></p>
+                                        
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Search</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                        
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Entity recognition" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div role="tabpanel" id="Intent classification" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">In Development</p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="Intent classification" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Classify</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Intent classification" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="Insult detection" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">In Development</p>
+        
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Classify</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                       
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Insult detection" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="Text Similarity" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">In Development</p>
+        
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Classify</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                        
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Insult detection" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div role="tabpanel" id="Text Summarization" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">In Development</p>
+        
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Classify</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                       
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Insult detection" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" id="Topic Modelling" class="tab-pane fade">
+                            <div>
+                                <div class="row show-grid" style="margin-top: 2em;">
+                                    <div class="col">
+                                        <blockquote class="blockquote">
+                                            <p class="about">In Development</p>
+        
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div id="ExEnQu" class="row show-grid">
+                                    <div class="col-sm-8">
+                                        <h3>Enter Text</h3>
+                                        <div>
+                                            <form>
+                                                <div class="form-group"><textarea rows="7" required="required" class="form-control"></textarea></div>
+                                                <!---->
+                                                <div class="form-group">
+                                                    <!---->
+                                                </div> <button type="submit" class="btn btn-primary">Classify</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Examples</h3>
+                                    </div>
+                                </div>
+                                <!---->
+                                <div class="row show-grid answers">
+                                    <div id="reversed-Insult detection" class="reversed col"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container footer">
+        <div class="contactUs">
+            <p>You can share your feedback at &#128525;
+                <a href="mailto:khan.amir504@gmail.com">khan.amir504@gmail.com</a></p>
+        </div>
+        <a href="https://github.com/Amir22010">
+            <img src="#" alt="powered by amir.ai">
+            © amir.ai on GitHub &#128525;
+        </a>
+    </footer>
+    <script src="../../static/js/vue_002.js"></script>
+</body>
+
+</html>
