@@ -34,6 +34,9 @@ def final_predictions(x, y, x_tk, y_tk, s):
     v = '';
     a = '';
 
+    print(len(x_tk.word_index))
+    print(len(y_tk.word_index))
+
     model = model_final(x.shape,
                         y.shape[1],
                        len(x_tk.word_index),
