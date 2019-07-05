@@ -35,3 +35,7 @@
 - Prediction Page UI
 
 ![predict](https://github.com/Amir22010/nlpweb/blob/master/static/images/Capture2.PNG)
+
+- Demo Link
+
+[!Demo](https://nlpweb.herokuapp.com/)
