@@ -25,3 +25,13 @@
 ## By doing Natural Language Processing, my main aim is to understand various NLP Concepts with Deep Learning Approach, and also to explore various pre-trained NLP Libraries and how i can use it to develop projects in NLP.
 
 ## this demo web app is for only for research purpose not meant to use as a real nlp application in production env.
+
+## Screenshots
+
+- Front Web App UI
+
+![front](https://github.com/Amir22010/nlpweb/blob/master/static/images/Capture1.PNG)
+
+- Prediction Page UI
+
+![predict](https://github.com/Amir22010/nlpweb/blob/master/static/images/Capture2.PNG)
