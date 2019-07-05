@@ -39,7 +39,7 @@ def final_predictions(x, y, x_tk, y_tk, s):
 
     model = model_final(x.shape,
                         y.shape[1],
-                       len(x_tk.word_index),
+                       len(x_tk.word_index) + 1,
                        len(y_tk.word_index))
     
     model.load_weights('models/machine_translation/best_combine.hdf5')
