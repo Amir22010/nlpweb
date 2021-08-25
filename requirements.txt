@@ -3,5 +3,5 @@ flask
 googletrans
 flask_bootstrap
 keras==2.2.4
-tensorflow==1.5.0
+tensorflow==2.5.1
 gunicorn
